@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Same warning as ANDArmorScanner: with "args": [], SetTypicalOpen's
+            // fallback REALLY runs against your live SkyrimSE install and REALLY
+            // writes ORFArmorScanner.esp into
+            // "C:\Steam\steamapps\common\Skyrim Special Edition\Data\". Not a dry run.
+            //
+            // To test against your actual MO2 load order, add the built .exe
+            // (bin/Debug/net10.0/ORFArmorScanner.exe) as a custom Executable in
+            // MO2, run it from there once (MO2's VFS merges the Data folder for
+            // that process), then use ".NET Core Attach" to attach this debugger.
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/bin/Debug/net10.0/ORFArmorScanner.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}

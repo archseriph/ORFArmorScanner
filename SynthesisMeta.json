@@ -1,0 +1,17 @@
+{
+  "Nickname": "ORF Armor Scanner",
+  "Visibility": "Visible",
+  "OneLineDescription": "Infers Outfit Recognition Framework keywords (color + style) from existing SLA_ skimpiness keywords and from armor name/model-name text matching.",
+  "LongDescription": "Two independent passes. Pass 1 translates existing SLA_ (SexLab Aroused) keywords already on an armor into the matching ORF_ skimpiness-style keyword (bra, underwear, revealing, nearlynaked, shortskirt, tight, transparent) via a direct mapping table, the same approach ANDArmorScanner uses for AND_ keywords, so it inherits whatever broad SLA_ coverage the load order already has instead of guessing from text. Pass 2 regex-matches the armor's display Name/EditorID (and optionally its ArmorAddon model filenames) against word lists for the ORF color keywords (red, blue, green, yellow, black, grey, brown, white, pink, purple, silver, gold, colourful) and the garment-type style keywords that have no skimpiness-keyword equivalent (robes, hooded, dress, classy, scruffy, sturdy, intimidating, cleavage, flimsy). Armor that already carries any ORF_ color keyword is left alone (respects hand-curated FIBBI/base-ORF patches); style keywords are additive and stack. Armor with any skimpiness signal but no color match is reported at the end as a manual-KID candidate.",
+  "PreferredAutoVersioning": "Default",
+  "RequiredMods": [
+    "Outfit Recognition Framework.esp",
+    "Skyrim.esm",
+    "Update.esm"
+  ],
+  "TargetedReleases": [
+    "SkyrimSE",
+    "SkyrimVR",
+    "SkyrimSEGog"
+  ]
+}
